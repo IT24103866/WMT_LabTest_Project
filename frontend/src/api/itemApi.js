@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_URL || "https://itemmanagement-a6bvavf0degkgcem.southeastasia-01.azurewebsites.net/api",
 });
 
 export const getItems = () => API.get("/items");
