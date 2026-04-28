@@ -8,6 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
+      customerReviewCount: 0,
     }
   );
 
@@ -21,6 +22,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
+      customerReviewCount: Number(formData.customerReviewCount),
     });
   };
 
@@ -40,6 +42,15 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         name="price"
         value={formData.price}
         onChange={handleChange}
+        required
+      />
+      <label>Customer Review Count</label>
+      <input
+        type="number"
+        name="customerReviewCount"
+        value={formData.customerReviewCount}
+        onChange={handleChange}
+        min="0"
         required
       />
 

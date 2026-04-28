@@ -27,6 +27,11 @@ const itemSchema = new mongoose.Schema(
       default: "",
       trim: true,
     },
+    customerReviewCount: {
+      type: Number,
+      default: "",
+      min: [0, "Review count cannot be negative"],
+    }
   },
   { timestamps: true }
 );
